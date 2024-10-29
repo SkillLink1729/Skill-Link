@@ -54,25 +54,21 @@
         <h2>Select Your Team</h2>
         <p>Choose the type of team you need for your project:</p>
         <div class="team-grid">
-            <div class="team-card">
+            <div class="team-card" onclick="showTeamDetails('development')">
                 <h3>Development Team</h3>
                 <p>Expert developers and engineers ready to build your product.</p>
-                <button>Select Team</button>
             </div>
-            <div class="team-card">
+            <div class="team-card" onclick="showTeamDetails('marketing')">
                 <h3>Marketing Team</h3>
                 <p>Creative marketers to promote your brand and drive sales.</p>
-                <button>Select Team</button>
             </div>
-            <div class="team-card">
+            <div class="team-card" onclick="showTeamDetails('design')">
                 <h3>Design Team</h3>
                 <p>Innovative designers to create stunning visuals for your projects.</p>
-                <button>Select Team</button>
             </div>
-            <div class="team-card">
+            <div class="team-card" onclick="showTeamDetails('sales')">
                 <h3>Sales Team</h3>
                 <p>Experienced sales professionals to boost your business growth.</p>
-                <button>Select Team</button>
             </div>
         </div>
     </section>
@@ -93,5 +89,12 @@
     <footer>
         <p>&copy; 2024 Skill Link. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showTeamDetails(team) {
+            // Redirect to the team-details.html page with the selected team
+            window.location.href = `team-details.html?team=${team}`;
+        }
+    </script>
 </body>
 </html>
