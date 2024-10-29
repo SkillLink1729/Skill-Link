@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Details - Skill Link</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Skill Link Logo" class="logo"> <!-- Black logo image -->
+        <h1>Skill Link</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="team-details" class="team-details">
+        <h2>Team Members:</h2>
+        <ul id="member-list"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Skill Link. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const teams = {
+            development: [
+                { name: "Rahul", age: 30, experience: "5 years" },
+                { name: "Priya", age: 28, experience: "3 years" },
+                { name: "Arjun", age: 35, experience: "7 years" },
+            ],
+            marketing: [
+                { name: "Deepa", age: 32, experience: "6 years" },
+                { name: "Vikram", age: 29, experience: "4 years" },
+                { name: "Sneha", age: 31, experience: "5 years" },
+            ],
+            design: [
+                { name: "Kiran", age: 27, experience: "3 years" },
+                { name: "Meera", age: 34, experience: "6 years" },
+                { name: "Nisha", age: 29, experience: "4 years" },
+            ],
+            sales: [
+                { name: "Raj", age: 36, experience: "8 years" },
+                { name: "Aditi", age: 30, experience: "5 years" },
+                { name: "Siddharth", age: 33, experience: "7 years" },
+            ],
+        };
+
+        // Get the team type from the URL
+        const params = new URLSearchParams(window.location.search);
+        const team = params.get('team');
+
+        // Populate member details
+        const memberList = document.getElementById("member-list");
+        teams[team].forEach(member => {
+            const li = document.createElement("li");
+            li.textContent = `${member.name}, Age: ${member.age}, Experience: ${member.experience}`;
+            memberList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
