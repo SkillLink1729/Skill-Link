@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skill Link - Team Groups</title>
     <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Skill Link - Team Groups</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
+        <h1>Skill Link</h1>
     </header>
 
-    <section id="group-selection" class="group-selection">
+    <section class="group-selection">
         <h2 id="selected-team"></h2>
+        <p>Select a group to view member details:</p> <!-- Added message here -->
         <ul id="group-list"></ul>
     </section>
 
-    <section id="member-details" class="member-details">
-        <h3>Member Details:</h3>
+    <section class="member-details">
+        <h3>Group Members</h3>
         <ul id="members-list"></ul>
     </section>
 
@@ -34,46 +31,46 @@
         const groups = {
             development: [
                 { group: 'Group 1', members: [
-                    { name: 'Amit Sharma', age: 30, experience: '5 years in Frontend Development' },
-                    { name: 'Ravi Kumar', age: 28, experience: '4 years in Backend Development' },
-                    { name: 'Priyanka Singh', age: 26, experience: '3 years in Full Stack Development' }
+                    { name: 'Ravi Kumar', age: 28, experience: '5 years in Frontend Development' },
+                    { name: 'Sita Sharma', age: 30, experience: '6 years in Backend Development' },
+                    { name: 'Ajay Mehta', age: 27, experience: '4 years in Full Stack Development' }
                 ]},
                 { group: 'Group 2', members: [
-                    { name: 'Neha Gupta', age: 32, experience: '6 years in Full Stack Development' },
-                    { name: 'Vikram Singh', age: 29, experience: '3 years in Mobile Development' },
-                    { name: 'Siddharth Verma', age: 27, experience: '2 years in Web Development' }
+                    { name: 'Anjali Singh', age: 29, experience: '3 years in Mobile App Development' },
+                    { name: 'Kiran Yadav', age: 32, experience: '5 years in Cloud Computing' },
+                    { name: 'Rohit Verma', age: 30, experience: '4 years in DevOps' }
                 ]},
                 { group: 'Group 3', members: [
-                    { name: 'Aakash Yadav', age: 31, experience: '4 years in Software Development' },
-                    { name: 'Deepak Mehta', age: 27, experience: '2 years in DevOps' },
-                    { name: 'Komal Sharma', age: 29, experience: '5 years in Software Testing' }
+                    { name: 'Nisha Kapoor', age: 28, experience: '3 years in Data Science' },
+                    { name: 'Rajesh Reddy', age: 31, experience: '6 years in Machine Learning' },
+                    { name: 'Pooja Joshi', age: 27, experience: '4 years in AI Development' }
                 ]},
                 { group: 'Group 4', members: [
-                    { name: 'Sita Rani', age: 26, experience: '3 years in Frontend Development' },
-                    { name: 'Rahul Choudhary', age: 29, experience: '4 years in Backend Development' },
-                    { name: 'Rina Patel', age: 30, experience: '6 years in UI Design' }
+                    { name: 'Sunil Gupta', age: 29, experience: '5 years in Software Testing' },
+                    { name: 'Neha Desai', age: 30, experience: '2 years in QA Automation' },
+                    { name: 'Amit Choudhary', age: 28, experience: '3 years in Performance Testing' }
                 ]}
             ],
             marketing: [
                 { group: 'Group 1', members: [
-                    { name: 'Priya Mehta', age: 27, experience: '3 years in Digital Marketing' },
-                    { name: 'Sanjay Verma', age: 35, experience: '8 years in Brand Management' },
-                    { name: 'Vishal Joshi', age: 29, experience: '5 years in SEO' }
+                    { name: 'Aarav Joshi', age: 30, experience: '4 years in Digital Marketing' },
+                    { name: 'Sakshi Verma', age: 27, experience: '5 years in SEO' },
+                    { name: 'Kunal Mehta', age: 28, experience: '3 years in Content Marketing' }
                 ]},
                 { group: 'Group 2', members: [
-                    { name: 'Anita Joshi', age: 30, experience: '5 years in Content Marketing' },
-                    { name: 'Rahul Das', age: 31, experience: '6 years in Social Media Marketing' },
-                    { name: 'Aarti Sharma', age: 27, experience: '4 years in Email Marketing' }
+                    { name: 'Divya Rani', age: 29, experience: '4 years in Social Media Marketing' },
+                    { name: 'Rohan Kumar', age: 32, experience: '6 years in Email Marketing' },
+                    { name: 'Priya Nair', age: 28, experience: '3 years in Affiliate Marketing' }
                 ]},
                 { group: 'Group 3', members: [
-                    { name: 'Neeta Sharma', age: 34, experience: '7 years in SEO' },
-                    { name: 'Vikram Sethi', age: 29, experience: '4 years in Event Management' },
-                    { name: 'Shivani Gupta', age: 28, experience: '3 years in Market Research' }
+                    { name: 'Anshul Singh', age: 30, experience: '5 years in PPC Advertising' },
+                    { name: 'Tara Roy', age: 26, experience: '2 years in Influencer Marketing' },
+                    { name: 'Nitin Sharma', age: 31, experience: '7 years in Marketing Analytics' }
                 ]},
                 { group: 'Group 4', members: [
-                    { name: 'Kiran Reddy', age: 28, experience: '3 years in Product Marketing' },
-                    { name: 'Tanvi Gupta', age: 26, experience: '2 years in Content Creation' },
-                    { name: 'Rajesh Nair', age: 32, experience: '5 years in Advertising' }
+                    { name: 'Kavita Joshi', age: 29, experience: '3 years in Brand Management' },
+                    { name: 'Vikram Yadav', age: 31, experience: '6 years in Market Research' },
+                    { name: 'Sheetal Patel', age: 28, experience: '4 years in Strategy Development' }
                 ]}
             ],
             design: [
