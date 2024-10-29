@@ -7,18 +7,18 @@
 }
 
 body {
-    background-color: #f5f5f5; /* Light neutral background for readability */
-    color: #333333; /* Dark text color for readability */
+    background-color: #121212; /* Dark background for a modern, sleek look */
+    color: #e0e0e0; /* Light text color for readability */
 }
 
 header {
-    background-color: #005f73; /* Primary color - soft blue */
+    background-color: #1f1f1f; /* Slightly lighter for contrast */
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #ffffff; /* White text for contrast */
+    color: #e0e0e0;
 }
 
 header h1 {
@@ -40,32 +40,31 @@ nav ul {
 }
 
 nav ul li a {
-    color: #ffffff; /* White color for links */
+    color: #bb86fc; /* Accent color for links */
     text-decoration: none;
     font-weight: bold;
 }
 
 .hero {
-    background-color: #005f73; /* Primary color - soft blue */
+    background-color: #333333; /* Dark gray for subtle variation */
     padding: 50px 20px;
     text-align: center;
-    color: #ffffff; /* White text for contrast */
 }
 
 .hero-text h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #bb86fc; /* Accent color for headings */
 }
 
 .services {
     padding: 50px 20px;
-    background-color: #ffddd2; /* Accent color - light peach */
+    background-color: #1f1f1f;
     text-align: center;
 }
 
 .services h2, .team-selection h2, .contact h2 {
-    color: #333333; /* Dark text color for readability */
+    color: #bb86fc;
 }
 
 .service-list {
@@ -76,31 +75,31 @@ nav ul li a {
 }
 
 .service-item {
-    background-color: #ffffff; /* White background for readability */
+    background-color: #333333;
     padding: 20px;
     border-radius: 8px;
-    color: #333333;
-    border: 1px solid #cccccc;
 }
 
 .team-selection {
-    background-color: #005f73; /* Primary color */
+    background-color: #1f1f1f;
     padding: 50px 20px;
-    color: #ffffff;
 }
 
 .team-card {
-    background-color: #ffffff; /* White background for readability */
+    background-color: #333333;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    color: #333333;
-    border: 1px solid #cccccc;
+    color: #e0e0e0;
+}
+
+.team-card h3 {
+    color: #bb86fc;
 }
 
 button {
-    background-color: #ff7f50; /* Accent color - coral for buttons */
-    color: #ffffff;
+    background-color: #bb86fc;
+    color: #121212;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -109,22 +108,21 @@ button {
 }
 
 button:hover {
-    background-color: #ff5733; /* Slightly darker shade of coral on hover */
+    background-color: #9a68c3;
 }
 
 .contact {
-    background-color: #ffddd2; /* Accent color */
+    background-color: #1f1f1f;
     padding: 50px 20px;
     text-align: center;
-    color: #333333;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    background-color: #ffffff;
-    color: #333333;
-    border: 1px solid #cccccc;
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #555555;
     padding: 10px;
     border-radius: 4px;
     width: 100%;
@@ -132,13 +130,13 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #ff7f50; /* Accent color */
+    background-color: #bb86fc;
 }
 
 footer {
-    background-color: #f5f5f5;
+    background-color: #121212;
     text-align: center;
     padding: 10px;
-    color: #777777;
+    color: #bbbbbb;
     font-size: 0.9rem;
 }
