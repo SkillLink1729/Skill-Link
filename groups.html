@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Link - Team Groups</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+</head>
+<body>
+    <header>
+        <h1>Skill Link - Team Groups</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="group-selection" class="group-selection">
+        <h2 id="selected-team"></h2>
+        <ul id="group-list"></ul>
+    </section>
+
+    <section id="member-details" class="member-details">
+        <h3>Member Details:</h3>
+        <ul id="members-list"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Skill Link. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const groups = {
+            development: [
+                { group: 'Group 1', members: [
+                    { name: 'Amit Sharma', age: 30, experience: '5 years in Frontend Development' },
+                    { name: 'Ravi Kumar', age: 28, experience: '4 years in Backend Development' },
+                    { name: 'Priyanka Singh', age: 26, experience: '3 years in Full Stack Development' }
+                ]},
+                { group: 'Group 2', members: [
+                    { name: 'Neha Gupta', age: 32, experience: '6 years in Full Stack Development' },
+                    { name: 'Vikram Singh', age: 29, experience: '3 years in Mobile Development' },
+                    { name: 'Siddharth Verma', age: 27, experience: '2 years in Web Development' }
+                ]},
+                { group: 'Group 3', members: [
+                    { name: 'Aakash Yadav', age: 31, experience: '4 years in Software Development' },
+                    { name: 'Deepak Mehta', age: 27, experience: '2 years in DevOps' },
+                    { name: 'Komal Sharma', age: 29, experience: '5 years in Software Testing' }
+                ]},
+                { group: 'Group 4', members: [
+                    { name: 'Sita Rani', age: 26, experience: '3 years in Frontend Development' },
+                    { name: 'Rahul Choudhary', age: 29, experience: '4 years in Backend Development' },
+                    { name: 'Rina Patel', age: 30, experience: '6 years in UI Design' }
+                ]}
+            ],
+            marketing: [
+                { group: 'Group 1', members: [
+                    { name: 'Priya Mehta', age: 27, experience: '3 years in Digital Marketing' },
+                    { name: 'Sanjay Verma', age: 35, experience: '8 years in Brand Management' },
+                    { name: 'Vishal Joshi', age: 29, experience: '5 years in SEO' }
+                ]},
+                { group: 'Group 2', members: [
+                    { name: 'Anita Joshi', age: 30, experience: '5 years in Content Marketing' },
+                    { name: 'Rahul Das', age: 31, experience: '6 years in Social Media Marketing' },
+                    { name: 'Aarti Sharma', age: 27, experience: '4 years in Email Marketing' }
+                ]},
+                { group: 'Group 3', members: [
+                    { name: 'Neeta Sharma', age: 34, experience: '7 years in SEO' },
+                    { name: 'Vikram Sethi', age: 29, experience: '4 years in Event Management' },
+                    { name: 'Shivani Gupta', age: 28, experience: '3 years in Market Research' }
+                ]},
+                { group: 'Group 4', members: [
+                    { name: 'Kiran Reddy', age: 28, experience: '3 years in Product Marketing' },
+                    { name: 'Tanvi Gupta', age: 26, experience: '2 years in Content Creation' },
+                    { name: 'Rajesh Nair', age: 32, experience: '5 years in Advertising' }
+                ]}
+            ],
+            design: [
+                { group: 'Group 1', members: [
+                    { name: 'Nisha Singh', age: 26, experience: '3 years in Graphic Design' },
+                    { name: 'Rakesh Kumar', age: 30, experience: '5 years in UX Design' },
+                    { name: 'Anjali Gupta', age: 27, experience: '4 years in UI Design' }
+                ]},
+                { group: 'Group 2', members: [
+                    { name: 'Siddhi Mehta', age: 29, experience: '4 years in Product Design' },
+                    { name: 'Manoj Yadav', age: 33, experience: '6 years in Visual Design' },
+                    { name: 'Aditi Sharma', age: 28, experience: '3 years in Motion Graphics' }
+                ]},
+                { group: 'Group 3', members: [
+                    { name: 'Vinay Sharma', age: 30, experience: '5 years in Interaction Design' },
+                    { name: 'Riya Roy', age: 26, experience: '2 years in 3D Modeling' },
+                    { name: 'Ajay Desai', age: 32, experience: '7 years in Branding' }
+                ]},
+                { group: 'Group 4', members: [
+                    { name: 'Ramesh Reddy', age: 29, experience: '3 years in Web Design' },
+                    { name: 'Neelam Choudhary', age: 31, experience: '6 years in Mobile UI Design' },
+                    { name: 'Dinesh Patel', age: 28, experience: '4 years in Digital Design' }
+                ]}
+            ],
+            sales: [
+                { group: 'Group 1', members: [
+                    { name: 'Ajay Singh', age: 28, experience: '4 years in B2B Sales' },
+                    { name: 'Sonam Gupta', age: 26, experience: '3 years in Retail Sales' },
+                    { name: 'Deepak Sharma', age: 30, experience: '5 years in Inside Sales' }
+                ]},
+                { group: 'Group 2', members: [
+                    { name: 'Ritesh Yadav', age: 32, experience: '6 years in Corporate Sales' },
+                    { name: 'Neha Desai', age: 29, experience: '4 years in Field Sales' },
+                    { name: 'Maya Rao', age: 28, experience: '3 years in Account Management' }
+                ]},
+                { group: 'Group 3', members: [
+                    { name: 'Ravi Sethi', age: 30, experience: '5 years in Sales Strategy' },
+                    { name: 'Gauri Nair', age: 27, experience: '2 years in Customer Service' },
+                    { name: 'Kiran Choudhary', age: 31, experience: '4 years in Technical Sales' }
+                ]},
+                { group: 'Group 4', members: [
+                    { name: 'Ranjit Mehta', age: 29, experience: '3 years in Digital Sales' },
+                    { name: 'Sanjana Joshi', age: 28, experience: '2 years in Product Sales' },
+                    { name: 'Amit Khanna', age: 30, experience: '5 years in International Sales' }
+                ]}
+            ]
+        };
+
+        // Get the team from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const team = urlParams.get('team');
+
+        // Set the selected team header
+        document.getElementById('selected-team').innerText = `${team.charAt(0).toUpperCase() + team.slice(1)} Groups`;
+
+        // Populate group list
+        const groupList = document.getElementById('group-list');
+        groups[team].forEach((group, index) => {
+            const groupItem = document.createElement('li');
+            groupItem.innerText = group.group;
+            groupItem.onclick = () => showMembers(team, index);
+            groupList.appendChild(groupItem);
+        });
+
+        function showMembers(team, groupIndex) {
+            const membersList = document.getElementById('members-list');
+            const members = groups[team][groupIndex].members;
+            membersList.innerHTML = '';
+            members.forEach(member => {
+                const memberItem = document.createElement('li');
+                memberItem.innerHTML = `
+                    <strong>Name:</strong> ${member.name}, 
+                    <strong>Age:</strong> ${member.age}, 
+                    <strong>Experience:</strong> ${member.experience}
+                `;
+                membersList.appendChild(memberItem);
+            });
+        }
+    </script>
+</body>
+</html>
