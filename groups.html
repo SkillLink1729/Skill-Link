@@ -6,6 +6,78 @@
     <title>Skill Link - Team Groups</title>
     <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .group-selection {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .group-selection h2 {
+            margin-bottom: 10px;
+        }
+
+        .group-selection p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        #group-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #group-list li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .group-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .group-button:hover {
+            background-color: #0056b3;
+        }
+
+        .member-details {
+            margin-top: 30px;
+        }
+
+        .member-details h3 {
+            margin-bottom: 10px;
+        }
+
+        #members-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -112,42 +184,46 @@
                     { name: 'Kiran Choudhary', age: 31, experience: '4 years in Technical Sales' }
                 ]},
                 { group: 'Group 4', members: [
-                    { name: 'Ranjit Mehta', age: 29, experience: '3 years in Digital Sales' },
-                    { name: 'Sanjana Joshi', age: 28, experience: '2 years in Product Sales' },
-                    { name: 'Amit Khanna', age: 30, experience: '5 years in International Sales' }
+                    { name: 'Ranjit Mehta', age: 29, experience: '3 years in Market Development' },
+                    { name: 'Anita Roy', age: 31, experience: '6 years in Sales Operations' },
+                    { name: 'Sunil Bhatia', age: 28, experience: '5 years in Product Sales' }
                 ]}
             ]
         };
 
-        // Get the team from the URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const team = urlParams.get('team');
+        // Function to display the group buttons
+        function displayGroups(team) {
+            const groupList = document.getElementById('group-list');
+            groupList.innerHTML = ''; // Clear previous content
+            document.getElementById('selected-team').textContent = team.charAt(0).toUpperCase() + team.slice(1) + ' Team';
 
-        // Set the selected team header
-        document.getElementById('selected-team').innerText = `${team.charAt(0).toUpperCase() + team.slice(1)} Groups`;
-
-        // Populate group list
-        const groupList = document.getElementById('group-list');
-        groups[team].forEach((group, index) => {
-            const groupItem = document.createElement('li');
-            groupItem.innerText = group.group;
-            groupItem.onclick = () => showMembers(team, index);
-            groupList.appendChild(groupItem);
-        });
-
-        function showMembers(team, groupIndex) {
-            const membersList = document.getElementById('members-list');
-            const members = groups[team][groupIndex].members;
-            membersList.innerHTML = '';
-            members.forEach(member => {
-                const memberItem = document.createElement('li');
-                memberItem.innerHTML = `
-                    <strong>Name:</strong> ${member.name}, 
-                    <strong>Age:</strong> ${member.age}, 
-                    <strong>Experience:</strong> ${member.experience}
-                `;
-                membersList.appendChild(memberItem);
+            groups[team].forEach((group) => {
+                const listItem = document.createElement('li');
+                const button = document.createElement('button');
+                button.textContent = group.group;
+                button.className = 'group-button';
+                button.onclick = () => displayMembers(group.members);
+                listItem.appendChild(button);
+                groupList.appendChild(listItem);
             });
+        }
+
+        // Function to display members
+        function displayMembers(members) {
+            const membersList = document.getElementById('members-list');
+            membersList.innerHTML = ''; // Clear previous content
+
+            members.forEach((member) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${member.name}, Age: ${member.age}, Experience: ${member.experience}`;
+                membersList.appendChild(listItem);
+            });
+        }
+
+        // Example usage
+        const team = new URLSearchParams(window.location.search).get('team');
+        if (team) {
+            displayGroups(team);
         }
     </script>
 </body>
