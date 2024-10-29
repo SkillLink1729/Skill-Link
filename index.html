@@ -46,6 +46,10 @@
             text-align: center;
         }
 
+        .team-info {
+            margin-bottom: 20px;
+        }
+
         .team-button {
             background-color: #bb86fc; /* Purple color for buttons */
             color: white;
@@ -118,10 +122,30 @@
     <section class="team-selection" id="team-selection">
         <h2>Select Your Team</h2>
         <p>Choose the type of team you need for your project:</p>
-        <button class="team-button" onclick="window.location.href='groups.html?team=development'">Development Team</button>
-        <button class="team-button" onclick="window.location.href='groups.html?team=marketing'">Marketing Team</button>
-        <button class="team-button" onclick="window.location.href='groups.html?team=design'">Design Team</button>
-        <button class="team-button" onclick="window.location.href='groups.html?team=sales'">Sales Team</button>
+
+        <div class="team-info">
+            <h3>Development Team</h3>
+            <p>Expert developers and engineers ready to build your product.</p>
+            <button class="team-button" onclick="window.location.href='groups.html?team=development'">Select Development Team</button>
+        </div>
+
+        <div class="team-info">
+            <h3>Marketing Team</h3>
+            <p>Creative marketers to promote your brand and drive sales.</p>
+            <button class="team-button" onclick="window.location.href='groups.html?team=marketing'">Select Marketing Team</button>
+        </div>
+
+        <div class="team-info">
+            <h3>Design Team</h3>
+            <p>Innovative designers to create stunning visuals for your projects.</p>
+            <button class="team-button" onclick="window.location.href='groups.html?team=design'">Select Design Team</button>
+        </div>
+
+        <div class="team-info">
+            <h3>Sales Team</h3>
+            <p>Experienced sales professionals to boost your business growth.</p>
+            <button class="team-button" onclick="window.location.href='groups.html?team=sales'">Select Sales Team</button>
+        </div>
     </section>
 
     <section id="contact" class="contact">
@@ -142,3 +166,4 @@
     </footer>
 </body>
 </html>
+
